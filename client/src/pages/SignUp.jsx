@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-export default function About() {
+export default function SignUp() {
     const [formData, setFormData] = useState({});
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ export default function About() {
             const data = await res.json();
             console.log("resp", data);
             setLoading(false);
-            if (data.success && data.success == false) {
+            if (data.success == false) {
                 setError(data.message);
                 return;
             }
